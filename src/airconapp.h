@@ -7,6 +7,7 @@ class AirConditioningApplication: public AirConditioningAPI {
   private:
     bool     aircon_on;
     uint32_t accumulated;
+    uint32_t threshold;
     uint32_t hysteresis;
     uint16_t count;
     
@@ -14,10 +15,12 @@ class AirConditioningApplication: public AirConditioningAPI {
   public:
     AirConditioningApplication(uint32_t hysteresis) :
       aircon_on(false),
+      threshold(0),
       count(0), 
       accumulated(0), 
       hysteresis(hysteresis) {}
     // constructor accepts hysteresis because we don't expect this to change
+    // Note temperature must swing 2 * hysteresis (unless we half it here) 
 
     void SelectThreshold(uint32_t temperature);
     // Program threshold at which we switch on/off subject to hysterisis
