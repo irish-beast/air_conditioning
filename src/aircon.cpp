@@ -1,5 +1,9 @@
-#include "airconapp.h"
+#include "airconmain.h"
 
-int main(void) {
-  auto aircon = new AirConditioningApplication(500); // hysterisis is 0.5C
-}
+void AirConditioningApplication::SelectThreshold(uint32_t temperature) {}
+void AirConditioningApplication::TemperatureMeasurement(uint32_t temperature) {}
+void AirConditioningApplication::MeasurementTick() {}
+
+void AirConditioningMain::SwitchOn() {}
+void AirConditioningMain::SwitchOff() {}
+

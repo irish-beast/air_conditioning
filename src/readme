@@ -1,0 +1,9 @@
+constants.h         
+
+airconapi.h         AirConditioningAPI              abstract
+airconapp.h         AirConditioningApplication      implementation
+airconmain.h        AirConditioningMain             abstract methods from AirConditioningAPI
+
+aircon.cpp          Implements application
+main.cpp            Implements main()
+
