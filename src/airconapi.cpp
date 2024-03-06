@@ -1,5 +1,6 @@
+#include <cstdint>
 #include "airconapi.h"
 
 int main(void) {
-  aircon = AirConditioningAPi();
+  auto aircon = new AirConditioningAPi();
 }
