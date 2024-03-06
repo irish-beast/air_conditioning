@@ -4,12 +4,14 @@
 using namespace std;
 
 class AirConditioningApplication: public AirConditioningAPI {
-  private:
+  public:
     bool     aircon_on;
+    uint16_t count;
+    
+  private:
     uint32_t accumulated;
     uint32_t threshold;
     uint32_t hysteresis;
-    uint16_t count;
     
   // All temperatures are in milli Kelvin.
   public:

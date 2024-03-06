@@ -17,14 +17,15 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  hello_test
-  demo/hello_test.cc
+  aircon_test
+  src/aircon.cpp
+  src/main.cpp
 )
 target_link_libraries(
-  hello_test
+  aircon_test
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(aircon_test)
 
