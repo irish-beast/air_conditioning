@@ -2,4 +2,6 @@
 # Build steps
 cmake -S . -B build
 cmake --build build
+# Execute 
+./build/aircon_test 
 

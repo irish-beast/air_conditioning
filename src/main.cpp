@@ -4,21 +4,24 @@
 
 using namespace std;
 
+const bool doprint = false;
+
 void AirConditioningMain::SwitchOn() {
-  cout << "Switching on"; }
+  if (doprint)
+    cout << "Switching on"; 
+}
 
 void AirConditioningMain::SwitchOff() {
-  cout << "Switching off"; }
-
-
-/* Cannot figure out how to catch assertions. 
-Should assert because SelectThreshold() not called
-
-TEST(AirconTest, TestFailFatally) {
-  auto aircon = new AirConditioningMain(500);
-  ASSERT_DEATH(aircon->MeasurementTick());
+  if (doprint)
+    cout << "Switching off"; 
 }
-*/
+
+
+TEST(AirconTest, AssertFail) {
+  auto aircon = new AirConditioningMain(500);
+  ASSERT_DEATH(aircon->MeasurementTick(), ".*");
+}
+
 
 TEST(AirconTest, BasicOperation) {
   auto aircon = new AirConditioningMain(500); // Temperature has to change 1C to switch
